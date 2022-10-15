@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  #WEB PHP E APACHE
+  web:
+    build:
+      context: ./
+      dockerfile: .dockerfile
+    working_dir: /usr/src/app
+    #compartilha um volume para o container
+    volumes:
+      - "./:/usr/src/app"
+    container_name: service_realtime
+    ports:
+      - "3100:3100"     
+    
+    
