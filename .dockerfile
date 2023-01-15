@@ -1,11 +1,10 @@
-FROM node:16
+FROM node:alpine
 
-WORKDIR /usr/src/app
+#Install some dependencies
 
-COPY . .
-
+WORKDIR /usr/app
+COPY ./ /usr/app
 RUN npm install
 
-EXPOSE 3100
-
-CMD [ "node", "server.js" ]
+# Set up a default command
+CMD [ "npm","start" ]
